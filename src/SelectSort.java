@@ -1,5 +1,5 @@
 public class SelectSort {
-
+//选择排序时间复杂度O(n^2)
     public static void selectSort(int [] arr){
         if(arr == null || arr.length <= 1)
             return;
@@ -10,7 +10,7 @@ public class SelectSort {
                     minIndex = j;
                 }
             }
-            swap(arr, minIndex, i);
+            swap(arr, minIndex, i);//每次选出最小值和第i个位置的元素交换，一次排序只交换两个元素的位置，与冒泡排序区别开！
         }
     }
 
