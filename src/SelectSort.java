@@ -4,7 +4,7 @@ public class SelectSort {
         if(arr == null || arr.length <= 1)
             return;
         for (int i = 0; i < arr.length - 1; ++i){
-            int minIndex = i;
+            int minIndex = i;//最小元素的下标
             for (int j = i + 1; j < arr.length; ++j){
                 if(arr[j] < arr[minIndex]){
                     minIndex = j;
