@@ -21,7 +21,7 @@ public class BubbleSort {
     }
 
     public static void main(String[] args) {
-        int [] test = {3,2,6,1,5};
+        int [] test = {4,8,9,3,2,1};
         bubbleSort(test);
         for (Integer integer: test){
             System.out.print(integer);
