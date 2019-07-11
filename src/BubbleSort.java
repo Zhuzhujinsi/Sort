@@ -3,7 +3,7 @@ public class BubbleSort {
     public static void bubbleSort(int[] arr){
         for (int i = 0; i < arr.length; ++i){//理论上需要交换n次
             boolean exchange = false;//设置一个交换标志，如果某次没有交换，则说明已经排序完毕
-            for (int j = 0; j <= arr.length - 2 - i; ++j){//判断相邻两个元素大小，大的放后面！
+            for (int j = 0; j <= arr.length - 2 - i; ++j){//判断相邻两个元素大小，大的放后面！注意j初始位置是0，并不是i！
                 if(arr[j] > arr[j + 1]){
                     swap(arr, j, j + 1);
                     exchange = true;
