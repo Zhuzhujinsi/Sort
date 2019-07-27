@@ -22,10 +22,11 @@ public class BinarySearch {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("请输入整数序列，以空格隔开：");
-        int[] test = Arrays.stream(sc.nextLine().trim().split(" ")).mapToInt(Integer::valueOf).toArray();
+        System.out.println("请输入整数序列，以逗号隔开：");
+        int[] test = Arrays.stream(sc.nextLine().trim().split(",")).mapToInt(Integer::valueOf).toArray();
         System.out.println("请输入查询目标：");
         int target = sc.nextInt();
+        System.out.print("查询结果：");
         System.out.print(binarySearch(test, target));
         System.out.println();
     }
