@@ -41,9 +41,11 @@ public class QuickSort {
     }
 
     public static void main(String[] args) {
-        //int[] a = {3,2,6,1,5};
-        //int[] a = {1,2,8,3,5,6,7,9,11,23};
-        int[] a = {0,0,0,0,0};
+        //int[] a = null;
+        int[] a = {1,2,3,4,5};
+        //int[] a = {5,4,3,2,1};
+        //int[] a = {88,99,31,20,1,2,6,0};
+        //int[] a = {0,0,0,0,0};
         quickSort(a, 0, a.length - 1);
         for(int i = 0; i < a.length; ++i) {
             System.out.print(a[i] + " ");
