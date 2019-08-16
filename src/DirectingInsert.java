@@ -14,10 +14,13 @@ public class DirectingInsert {
     }
 
     public static void main(String[] args) {
-        int [] test = {3,1,6,2,5};
+        //int [] test = {3,1,6,2,5};
+        //int [] test = {1,2,3,4,5};
+        //int [] test = {5,4,3,2,1};
+        int [] test = {0,0,0,0,0};
         directingInsert(test);
         for (Integer integer: test){
-            System.out.print(integer);
+            System.out.print(integer + " ");
         }
         System.out.println();
     }
