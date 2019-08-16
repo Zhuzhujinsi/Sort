@@ -6,14 +6,24 @@ public class QuickSort {
         int start = low;
         int end = high;
         while (start < end){
-            while (arr[end] >= pivotKey && start < end){
+            while (end > start && arr[end] >= pivotKey){
                 --end;
             }
-            swap(arr, end, start);
-            while (arr[start] <= pivotKey && start < end){
+            if(end > start) {
+                swap(arr, end, start);
+                if (start + 1 <= high)//如果不交换，表明有序了（end == start），就不要再进行比较了，start也就不用后移了
+                    ++start;
+            }
+
+            while (start < end && arr[start] <= pivotKey){
                 ++start;
             }
-            swap(arr, start, end);
+            if(start < end) {
+                swap(arr, start, end);
+                if (end - 1 >= low)//如果不交换，表明有序了（start == end），就不要再进行比较了，end也就不用前移了
+                    --end;
+            }
+
         }
         if(start - 1 > low){
             quickSort(arr, low, start - 1);
@@ -25,18 +35,19 @@ public class QuickSort {
     }
 
     public static void swap(int[] arr, int num1, int num2){
-        if(num1 == num2)
-            return;
         int temp = arr[num1];
         arr[num1] = arr[num2];
         arr[num2] = temp;
     }
 
     public static void main(String[] args) {
-        int[] a = {3,2,6,1,5};
-        quickSort(a, 0, 4);
+        //int[] a = {3,2,6,1,5};
+        //int[] a = {1,2,8,3,5,6,7,9,11,23};
+        int[] a = {0,0,0,0,0};
+        quickSort(a, 0, a.length - 1);
         for(int i = 0; i < a.length; ++i) {
-            System.out.println(a[i]);
+            System.out.print(a[i] + " ");
         }
+        System.out.println();
     }
 }
