@@ -3,9 +3,9 @@ public class SelectSort {
     public static void selectSort(int [] arr){
         if(arr == null || arr.length <= 1)
             return;
-        for (int i = 0; i < arr.length - 1; ++i){
+        for (int i = 0; i <= arr.length - 2; ++i){
             int minIndex = i;//最小元素的下标
-            for (int j = i + 1; j < arr.length; ++j){
+            for (int j = i + 1; j < arr.length; ++j){//j初始值设为"i+1"而不是i，是处于优化的角度!
                 if(arr[j] < arr[minIndex]){
                     minIndex = j;
                 }
@@ -23,7 +23,9 @@ public class SelectSort {
     }
 
     public static void main(String[] args) {
-        int [] test = {3,1,6,2,5};
+        //int [] test = {3,1,6,2,5};
+        //int [] test = {1,2,3,4,5};
+        int [] test = {5,4,3,2,1};
         selectSort(test);
         for (Integer integer: test){
             System.out.print(integer);
