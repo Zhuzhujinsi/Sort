@@ -18,15 +18,15 @@ public class MergeSort {
             temp[k++] = a[p2++];
         }
 
-        int index = left;
-        for (int i = 0; i < right - left + 1; ++i){
-            a[index++] = temp[i];
+        int index = 0;
+        for (int i = left; i <= right; ++i){
+            a[i] = temp[index++];
         }
     }
 
     public static void mergeSort(int[] arr, int start, int end){
         if(start < end){
-            int mid = (start + end) / 2;
+            int mid = (start + end) >> 1;
             mergeSort(arr, start, mid);
             mergeSort(arr, mid + 1, end);
             merge(arr, start, mid, end);
@@ -34,10 +34,16 @@ public class MergeSort {
     }
 
     public static void main(String[] args) {
-        int[] b = {3,2,6,1,5};
-        mergeSort(b, 0, 4);
+        //int[] b = {3,2,6,1,5};
+        //int[] b = {0,0,0,0,0};
+        int[] b = {1,2,66,33,91,0,2,3};
+        //int[] b = null;
+        if(b == null)
+            return;
+        mergeSort(b, 0, b.length - 1);
         for (Integer integer : b){
-            System.out.println(integer);
+            System.out.print(integer + " ");
         }
+        System.out.println();
     }
 }
