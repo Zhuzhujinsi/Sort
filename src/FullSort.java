@@ -16,7 +16,7 @@ public class FullSort {
     }
 
     public static void swap(int[] a, int num1, int num2){
-        if(num1 == num2)
+        if(num1 == num2)//出于优化的考虑，添加这一部分判断！
             return;
 
         int temp = a[num1];
